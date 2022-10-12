@@ -5,9 +5,11 @@
   <input type="file" (change)="getFile($event)" class="file"/>
 </div>
 
-<div *ngIf="file">
-  File name : {{file.name}} <br/>
-  <button (click)="file = undefined">Clear file</button>
-</div> <br/>
-
-<button (click)="uploadFile()">Upload file</button>
+<div class="contentFile">
+  <div class="fileItem" *ngIf="file">
+    File name : {{file.name}} <br/>
+    <button (click)="file = undefined">Clear file <strong>X</strong></button>
+  </div> <br/>
+  
+  <button (click)="uploadFile()" *ngIf="file">Upload</button>
+</div>
